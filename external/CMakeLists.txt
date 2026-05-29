@@ -83,8 +83,9 @@ set(SGL_LOCAL_SLANG_DIR "${CMAKE_SOURCE_DIR}/../slang" CACHE PATH "Path to a loc
 set(SGL_LOCAL_SLANG_BUILD_DIR "build/Debug" CACHE STRING "Build directory of the local slang build")
 
 set(SGL_SLANG_VERSION "2026.5.2" CACHE STRING "Slang version to download when not using a local build")
+set(SGL_SLANG_GITHUB_OWNER "shader-slang" CACHE STRING "GitHub owner that hosts the slang release zips downloaded by sgl when SGL_LOCAL_SLANG is OFF. Override (e.g. to a personal fork) when testing a custom slang build.")
 
-set(SLANG_URL_BASE "https://github.com/shader-slang/slang/releases/download/v${SGL_SLANG_VERSION}/slang-${SGL_SLANG_VERSION}")
+set(SLANG_URL_BASE "https://github.com/${SGL_SLANG_GITHUB_OWNER}/slang/releases/download/v${SGL_SLANG_VERSION}/slang-${SGL_SLANG_VERSION}")
 
 if(SGL_WINDOWS)
     if(SGL_ARCHITECTURE MATCHES "x86_64")
